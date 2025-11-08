@@ -28,8 +28,7 @@ class _QuizState extends State<Quiz> {
 
     if (selectedAnswers.length == questions.length) {
       setState(() {
-        selectedAnswers = []; 
-        activeScreen = 'result-screen';
+         activeScreen = 'result-screen';
       });
     }
   }
@@ -38,13 +37,13 @@ class _QuizState extends State<Quiz> {
   Widget build(context) {
     Widget screenWidget = StartScreen(switchScreen); 
 
-    if(activeScreen == 'question-screen'){
+    if(activeScreen == 'questions-screen'){
       screenWidget = QuestionsSccreen(
         onSelectAnswer: chooseAnswer,
       ); 
     }
 
-    if(activeScreen == 'results-screen'){
+    if(activeScreen == 'result-screen'){
       screenWidget =  ResultScreen(chosenAnswers: selectedAnswers,); 
     }
 
